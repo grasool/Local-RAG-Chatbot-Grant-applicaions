@@ -11,11 +11,16 @@ loader = PyPDFDirectoryLoader("data-grants/")
 
 docs = loader.load()
 #split text to chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
 docs = text_splitter.split_documents(docs)
-embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", model_kwargs={'device': 'cpu'})
+#embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", model_kwargs={'device': 'cpu'})
+
+
+embedding_function = HuggingFaceEmbeddings(model_name="hkunlp/instructor-large", model_kwargs={'device': 'cuda'})
+
 #print(len(docs))
 
-vectorstore = Chroma.from_documents(docs, embedding_function, persist_directory="./chroma_db_nccn")
+vectorstore = Chroma.from_documents(docs, embedding_function, persist_directory="./chroma_db_grants")
 
 print(vectorstore._collection.count())
+print("Done")

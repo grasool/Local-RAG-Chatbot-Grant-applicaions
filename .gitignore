@@ -12,3 +12,8 @@ data-grants/NSF_PFI_2023__Failure_Detection_in_Language_and_Vision_Language_Mode
 data-grants/NSF_SCH_2023.pdf
 data-grants/R01___Immunotherapy_Foundation_Model.pdf
 data-grants/R01___Trustworthy_Brain_Tumor_Surveillance.pdf
+chroma_db_grants/chroma.sqlite3
+chroma_db_grants/704200af-7ce6-4323-97cb-582d1633211d/data_level0.bin
+chroma_db_grants/704200af-7ce6-4323-97cb-582d1633211d/header.bin
+chroma_db_grants/704200af-7ce6-4323-97cb-582d1633211d/length.bin
+chroma_db_grants/704200af-7ce6-4323-97cb-582d1633211d/link_lists.bin
